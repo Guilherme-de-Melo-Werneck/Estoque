@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block product %}
+<p>
+    <div class="box">
+    <span class="tag is-black is-small">Novo Entrada</span>
+</div>
+</span>
+</p>
+<br>
+<form action="{% url 'entrada:new_entrada' %}" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="field">
+        <label class="label">{{ field.label }}</label>
+           {%  if field.name  == 'cor' %}
+            <div class="select">{{ field }}</div>
+        </div>
+        {% else %}
+        <div class="control">{{ field }}</div>
+        {% endif %}
+        {{ field.type }}
+    </div>
+    {% endfor %}
+    <button class="button is-primary" type="submit">Salvar</button>
+</form>
+
+{% endblock %}

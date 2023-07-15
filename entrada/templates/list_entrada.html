@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block product %}
+<p>
+    <div class="box">
+    <span class="tag is-black is-small">Entradas</span>
+</div>
+</span>
+</p>
+<br>
+
+<a class="button is-primary" href="{% url 'entrada:new_entrada' %}">Novo</a>
+
+<table id="myTable"  class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th></th>
+            <th></th>
+        </tr>  
+    </thead>
+    <tbody>
+        {% for entrada in entradas %}
+        <tr>
+            <th>{{ entrada.id }}</th>
+            <td>{{ entrada.produto }}</td>
+            <td>{{ entrada.preco }}</td>
+            <td>{{ entrada.quantidade }}</td>
+            <td><a class="button is-info" href="{% url 'entrada:update_entrada' entrada.id %}">Alterar</a></td>
+            <td><a class="button is-danger" href="{% url 'entrada:delete_entrada' entrada.id %}">Deletar</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

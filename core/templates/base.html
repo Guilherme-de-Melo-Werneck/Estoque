@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>GW</title>
+    <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/jquery.dataTables.min.js' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.dataTables.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="http://www2.ugb.edu.br">
+          <img src="{% static 'imagens/logo.jpg' %}" style="max-height: 100px">
+        </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="{% url 'index' %}"> <strong>Home</strong></a>
+      
+            </a>
+            <a class="navbar-item" href="{% url 'saida:notaSaidaList' %}"> <strong>Saída</strong></a>
+            
+
+            <a class="navbar-item" href="{% url 'produto:list_produto' %}"> <strong>Produtos</strong></a>
+            </a>
+      
+            <a class="navbar-item" href="{% url 'entrada:list_entrada' %}"> <strong>Entrada</strong></a>
+              
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"> <strong>Mais</strong></a>
+                
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item"> <strong>Sobre</strong></a>
+    
+                <a class="navbar-item"> <strong>Contato</strong></a>
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary">
+                  <strong>Entrar</strong>
+                </a>
+                <a class="button is-light">
+                  Sair
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      </div>
+      <article class="message is-grey">
+        <div class="message-header">
+          <p>PAPELARIA WERNECK</p>
+          <button class="sucess" aria-label="sucess"></button>
+        </div>
+        <div class="message-body">
+          Bem-vindo(a) à nossa encantadora papelaria <strong>Werneck</strong>,  onde a criatividade ganha vida e os sonhos se transformam em belas realidades! Estamos felizes em recebê-lo(a) e ansiosos para fazer parte das suas histórias com cada traço e cada palavra.
+        </div>
+      </article>
+      <div class = "container">
+        <div class = "notification">
+          {% block product %}{% endblock %}
+
+        </div>
+      </div>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Qualquer erro entre em contato comigo </strong>  <a href="https://www.instagram.com/meelogui/">, Guilherme Werneck</a>. Obrigado
+        </p>
+      </div>
+    </footer>
+</body>
+<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+<script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'js/js.js' %}"></script>
+</html>

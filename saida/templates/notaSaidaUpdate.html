@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block product %}
+<div class="box">
+    <p>
+        <span class="tag is-black is-small">Alterar Saida</span>
+    </p>     
+</div>
+
+<div class="box"> 
+    <form action="{% url 'saida:notaSaidaUpdate' pk %}" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="field">
+            <label class="label">{{ field.label }}</label>
+            {% if field.name == 'produto' %}
+            <div class="select">{{ field }}</div>
+            {% else %}
+            <div class="control">{{ field }}</div>
+            {% endif %}
+            {{ field.type }}
+        </div>
+        {% endfor %}
+        <button class="button is-primary" type="submit">Salvar</button>
+    </form>
+    {% endblock %}
+</div>

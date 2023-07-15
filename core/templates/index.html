@@ -1,0 +1,120 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>GW</title>
+    <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}"> 
+</head>
+<body>
+    <section class = "hero is-medium is-black">
+        <div class = "hero-body">
+            <div class = "container">
+                <h1 class="title is-1">
+                    <span class="tag is-white">
+                    <span class="tag is-white is-large">Bem vindo</span>
+                </span>
+                </h1>
+            
+                <div class = "notification is-primary">
+                <h1 class = "title">
+                    <span class="tag is-black">Nome</span>
+                    Guilherme Werneck
+                </h1>
+                <h2 class = "subtitle">
+                    <span class="tag is-black">Curso</span>
+                    Sistema de informção
+                </h2>
+                
+            </div>
+                <progress class="progress is-small is-primary" max="100">15%</progress>
+                <progress class="progress is-danger" max="100">30%</progress>
+                <progress class="progress is-medium is-dark" max="100">45%</progress>
+                <progress class="progress is-large is-info" max="100">60%</progress>
+
+
+            </div>
+                
+        </div>
+            </div>
+    </section>
+    <section class = "hero">
+        <div class="hero-body">
+            <div class="container">
+                <div class = "notification is-black">
+                <div class="columns has-text-centered">
+                    <div class="column">
+                        <h1 class = "title">Entradas</h1>
+                        <h2 class = "subtitle">Acesse a entrada da papelaria</h2>
+                        <a class = "button is-primary" href="{% url 'entrada:list_entrada' %}">Acessar</a>
+                        
+                    </div>
+                    <div class="column">
+                        <h1 class = "title">Saídas</h1>
+                        <h2 class = "subtitle">Acesse a saida da papelaria</h2>
+                        <a class = "button is-primary" href="{% url 'saida:notaSaidaList' %}">Acessar</a>
+
+                    </div>
+
+                    <div class="column">
+                        <h1 class = "title">Lista de Produtos</h1>
+                        <h2 class = "subtitle">Acesse a lista de produtos</h2>
+                        <a class = "button is-primary" href="{% url 'produto:list_produto' %}">Acessar</a>
+
+                    </div>
+                    <div class="column">
+                        <h1 class = "title">Produtos</h1>
+                        <h2 class = "subtitle">Adicionar um produto</h2>
+                        <a class = "button is-primary" href="{% url 'produto:new_produto' %}">Acessar</a>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<div class = "notification is-black">
+<div class="card">
+    <div class="card">
+      <figure class="image">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-10x10">
+            <img src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-instagram-social-platform-icon-png-image_6315976.png" style="max-height: 80px">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">Guilherme Werneck</p>
+          <p class="subtitle is-6">@meelogui</p>
+        </div>
+      </div>
+  
+      <div class="content">
+        "O código é a poesia do futuro, criando mundos através da lógica e da criatividade."
+        John Maeda. <a>@programação</a>.
+        <a href="#">#css</a> <a href="#">#python</a>
+        <br>
+        <time datetime="2016-1-1">11:00 PM - 04 Jun 2023</time>
+      </div>
+    </div>
+  </div>
+<div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        UGB-FERP
+      </p>
+      <button class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </header>
+  </div>
+</div>
+</html>
+
